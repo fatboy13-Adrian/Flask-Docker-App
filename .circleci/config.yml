@@ -13,7 +13,7 @@ jobs:
           version: 20.10.24   # Enables Docker commands in CircleCI
       - run:
           name: Build Docker Image
-          command: docker build -t robinyms101/flask-docker-app-for-devops:latest .
+          command: docker build -t fatb0y13-Adrian/flask-docker-app-for-devops:latest .
 
   publish:
     docker:
@@ -24,7 +24,7 @@ jobs:
           version: 20.10.24   # Enables Docker commands in CircleCI
       - run:
           name: Build Docker Image
-          command: docker build -t robinyms101/flask-docker-app-for-devops:latest .
+          command: docker build -t fatb0y13-Adrian/flask-docker-app-for-devops:latest .
       - run:
           name: Login to Docker Hub
           command: |
@@ -33,7 +33,7 @@ jobs:
           name: Push Docker Image
           command: |
             echo "Push Docker image..."
-            docker push robinyms101/flask-docker-app-for-devops:latest
+            docker push fatb0y13-Adrian/flask-docker-app-for-devops:latest
 
 workflows:
   version: 2
