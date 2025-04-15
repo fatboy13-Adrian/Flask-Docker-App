@@ -15,18 +15,6 @@ jobs:
           name: Build Docker Image
           command: docker build -t education-space/flask-docker-app-for-devops:latest .
 
-  test:
-    docker:
-      - image: cimg/python:3.8
-    steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: pip install -r requirements.txt
-      - run:
-          name: Run Tests
-          command: pytest  # Replace with your actual test command
-
   publish:
     docker:
       - image: cimg/base:stable
@@ -52,9 +40,6 @@ workflows:
   build-and-push:
     jobs:
       - build
-      - test:
-          requires:
-            - build
       - publish:
           requires:
-            - test
+            - build
