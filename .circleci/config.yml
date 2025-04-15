@@ -23,9 +23,6 @@ jobs:
       - setup_remote_docker:
           version: 20.10.24   # Enables Docker commands in CircleCI
       - run:
-          name: Build Docker Image
-          command: docker build -t fatb0y13-Adrian/flask-docker-app-for-devops:latest .
-      - run:
           name: Login to Docker Hub
           command: |
             echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
